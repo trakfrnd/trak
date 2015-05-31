@@ -35,13 +35,27 @@
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>4.9</version>
+            <version>4.11</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
 
     <build>
-        <plugins>
+        <plugins>        
+			<plugin>
+		        <groupId>org.apache.maven.plugins</groupId>
+		        <artifactId>maven-checkstyle-plugin</artifactId>
+		        <version>2.10</version>
+		        <configuration>
+		          <configLocation>checkstyle.xml</configLocation>
+		          <suppressionsLocation>
+		            checkstyle-suppressions.xml
+		          </suppressionsLocation>
+		          <suppressionsFileExpression>
+		            checkstyle.suppressions.file
+		          </suppressionsFileExpression>
+		        </configuration>
+      		</plugin>        
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
